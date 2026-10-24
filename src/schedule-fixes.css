@@ -1,0 +1,46 @@
+/* Keep each day column readable on narrow screens; the schedule itself scrolls horizontally. */
+#app { padding-top: max(14px, env(safe-area-inset-top)); }
+.schedule-scroll { overflow-x: auto; overflow-y: visible; touch-action: pan-x pan-y; overscroll-behavior-x: contain; }
+.day-column { flex: 0 0 270px; width: 270px; min-width: 270px; }
+.timeline { min-width: 270px; }
+.time-block { min-width: 0; }
+@media (min-width: 720px) { .day-column { flex: 0 0 calc(25% - 8px); width: auto; min-width: 0; } .timeline { min-width: 0; } }
+
+/* A compact full-day view: the whole 00:00-24:00 track fits on a phone. */
+.day-title { height: 38px; }
+.timeline { height: calc(100dvh - 125px); min-height: 500px; max-height: 720px; }
+.time-block { cursor: pointer; }
+.small-round { width: 38px; height: 38px; font-size: 24px; padding: 0; }
+.count-badge { display: inline-flex; min-width: 25px; height: 25px; padding: 0 7px; align-items: center; justify-content: center; border-radius: 99px; background: #e5eee8; color: var(--green); font-size: 14px; vertical-align: 2px; }
+.today-first { margin-top: 0; }
+.card-editable { cursor: pointer; }
+.card-editable:active { transform: scale(.995); }
+.gauge-wrap { display: flex; justify-content: center; padding: 10px 0 2px; }
+.pressure-gauge { width: 210px; height: 155px; position: relative; }
+.gauge-svg { display:block; width: 100%; height: 112px; overflow: visible; }
+.gauge-segment { fill:none; stroke-width:14; stroke-linecap:round; }
+.gauge-segment.low { stroke:#56a477; }.gauge-segment.medium { stroke:#d4c054; }.gauge-segment.high { stroke:#e49a4a; }.gauge-segment.very-high { stroke:#ce5d50; }
+.gauge-needle { stroke:#173f35; stroke-width:3; stroke-linecap:round; }.gauge-hub { fill:#173f35; }
+.gauge-center { position:relative; z-index:4; width:100%; height:42px; padding-top:4px; text-align:center; color:var(--green); background:transparent; }
+.gauge-center strong { font-size: 30px; }
+.gauge-center span { font-size: 12px; color: var(--muted); }
+.pressure-summary,.pressure-card #pressure-reason { text-align: center; margin: 8px auto 0; max-width: 30rem; font-weight: 700; }
+.fitness-placeholder { text-align: center; padding: 34px 20px; }
+.date-plan-row { display:grid; grid-template-columns:1fr 1fr; align-items:end; gap:8px; }
+.date-plan-row label { font-size:12px; color:var(--muted); }
+.date-plan-row input:disabled { opacity:.45; }
+.conflict-list { max-height:45vh; overflow:auto; padding:8px 12px; border-radius:12px; background:#fff4ec; }
+.pill[data-level="低"]{background:#dcece4}.pill[data-level="中"]{background:#f0e9b9;color:#6e5d12}.pill[data-level="高"]{background:#f6d7b3;color:#854e16}.pill[data-level="很高"]{background:#f2cbc6;color:#8b3128}
+.time-block { border:1px solid rgba(23,63,53,.12); white-space:nowrap; text-overflow:ellipsis; align-items:center; justify-content:center; line-height:1.1; padding:2px 5px; }
+.time-block.task { display:flex; text-align:center; overflow:hidden; }
+.pending-heading { display:flex; align-items:center; justify-content:space-between; gap:8px; }
+.pending-heading span { color:var(--muted); font-size:12px; }
+.pending-item { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:9px 0; border-top:1px solid rgba(37,78,64,.12); }
+.pending-item > div:first-child { min-width:0; flex:1 1 auto; }
+.pending-item .pending-actions { flex:0 0 auto; min-width:112px; justify-content:flex-end; flex-wrap:wrap; }
+.pending-item:first-of-type { border-top:0; }
+.pending-item strong { display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.pending-item p { margin:3px 0 0; color:var(--muted); font-size:11px; }
+.pending-actions { display:flex; flex:0 0 auto; gap:3px; }
+@media (max-width: 390px) { .timeline { min-height: 500px; } }
+@media (max-width: 430px) { .pending-item { align-items:flex-start; flex-wrap:wrap; } .pending-item .pending-actions { width:100%; min-width:0; justify-content:flex-end; } .pending-item strong { white-space:normal; overflow-wrap:anywhere; } }

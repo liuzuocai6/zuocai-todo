@@ -1,0 +1,24 @@
+dialog#workout-dialog {
+  width: 100vw;
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  background: var(--cream);
+}
+dialog#workout-dialog .dialog-form {
+  height: 100%;
+  max-height: none;
+  overflow-y: auto;
+  padding: max(16px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+}
+dialog#workout-dialog .section-heading {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding: 6px 0 12px;
+  background: var(--cream);
+}
+.workout-actions { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }

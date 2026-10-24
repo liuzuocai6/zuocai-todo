@@ -1,0 +1,6 @@
+{
+  "appId": "com.liuzuocai.localtodo",
+  "appName": "zuocai",
+  "webDir": "dist",
+  "server": { "androidScheme": "https" }
+}

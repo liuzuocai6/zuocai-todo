@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">zuocai</string>
+    <string name="title_activity_main">zuocai</string>
+    <string name="package_name">com.liuzuocai.localtodo</string>
+    <string name="custom_url_scheme">com.liuzuocai.localtodo</string>
+</resources>
