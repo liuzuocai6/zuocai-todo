@@ -13,6 +13,22 @@ zuocai 将待办、日程、时间负荷、训练计划、训练记录、休息�
 - JSON 备份与恢复，导入失败时事务回滚
 - Android 生命周期恢复和离线使用
 
+## 界面预览
+
+以下截图来自 `zuocai` Android App，展示主要页面和使用入口。截图只用于项目预览，不包含真实账户、任务数据库或备份文件。
+
+| 今日 | 日程 |
+| --- | --- |
+| ![今日页面](docs/screenshots/01-today.png) | ![日程页面](docs/screenshots/02-schedule.png) |
+
+| 长期目标 | 健身 |
+| --- | --- |
+| ![目标页面](docs/screenshots/03-goals.png) | ![健身页面](docs/screenshots/04-fitness.png) |
+
+| 设置 |
+| --- |
+| ![设置页面](docs/screenshots/05-settings.png) |
+
 ## 开发
 
 环境要求：Node.js 24、pnpm、JDK 21、Android SDK Platform 35 和 Build Tools 35。
@@ -72,6 +88,8 @@ pnpm run build
 ## 贡献
 
 请先阅读 [CONTRIBUTING.md](CONTRIBUTING.md)。提交代码时不要加入数据库、备份、密钥、APK、构建目录或任何本机配置。
+
+维护仓库时请参考 [维护指南](docs/maintenance.md)，其中包含截图替换、APK 发布、隐私检查和 GitHub 项目管理流程。
 
 ## 许可
 
