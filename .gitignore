@@ -28,7 +28,10 @@ keystore.properties
 .env.*
 !.env.example
 
-# Binary release files are distributed through Releases
+# Generated Android binaries stay out of source builds. The checked-in APK in
+# releases/ is an intentional public download artifact.
 *.apk
 *.aab
-安装包/
+!releases/
+!releases/*.apk
+!releases/*.sha256
